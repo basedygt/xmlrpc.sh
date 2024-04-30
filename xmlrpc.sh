@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [[ $# -ne 4 ]]; then
-    echo "Usage: $0 <endpoint> <username> <wordlist> <threads>"
+    echo -e "\nUsage: $0 <endpoint> <username> <wordlist> <threads>\n"
+    echo -e "Recommended threads: Less than 15 or you'll face false positives"
+    echo -e "Cracked Passwords Location: success.log"
+    echo -e "Attempted Passwords Location: attempts.log\n"
     echo "Example:"
     echo -e "  ./xmlrpc.sh http://example.com/xmlrpc.php admin passwords.txt 10\n"
-    echo -e "  Recommended threads: less than 15 or you'll face false positives"
-    echo -e "  Cracked Passwords Location: success.log"
-    echo -e "  Attempted Passwords Location: attempts.log"
     exit 0
 fi
 
