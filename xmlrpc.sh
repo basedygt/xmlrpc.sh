@@ -27,7 +27,7 @@ xmlrpc_login() {
         echo -e "\n[FOUND] ${password}"
         echo -e "\n[FOUND] ${password}" >> success.log
         echo -e "\n${curl_response}" >> success.log
-        exit 0
+        # exit 0 (uncomment this if you want to exit after 1st password is found not recommended as you might face false positive)
     fi
 }
 
